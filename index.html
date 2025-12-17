@@ -119,8 +119,11 @@
     /* Diagnosis cards */
     .diaggrid{display:grid;gap:14px}
     @media(min-width:768px){.diaggrid{grid-template-columns:1fr 1fr}}
-    .good{border-top:4px solid #14b8a6}
-    .bad{border-top:4px solid var(--orange)}
+
+    /* ✅ CAMBIO: en vez de border-top (línea arriba), usamos borde completo */
+    .good{border:2px solid #14b8a6}
+    .bad{border:2px solid var(--orange)}
+
     .box{padding:16px}
     .boxtitle{margin:0 0 10px;font-size:14px;font-weight:900;display:flex;align-items:center;gap:8px}
     .boxtitle.good{color:#0f766e}
@@ -230,7 +233,7 @@
         <div class="sub">Caso: Carlos Santos | Postergación por Estacionalidad</div>
       </div>
 
-      <!-- Opción B: Logo a la derecha -->
+      <!-- Logo a la derecha -->
       <div class="right-head">
         <img class="logo" src="mti-logo.png" alt="MTI Selling" />
         <div class="statusbox">
@@ -516,7 +519,6 @@ Puedo proponerte dos horarios: [Jueves 10h / Viernes 15h]
           await navigator.clipboard.writeText(text);
           showToast();
         } catch (e) {
-          // fallback
           const ta = document.createElement("textarea");
           ta.value = text;
           document.body.appendChild(ta);
